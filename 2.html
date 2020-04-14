@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>근무일지</title>
+        <script src="prac.js"></script>
+    </head>
+    <body>
+      
+
+        <!-- 영외활동 입력 -->
+        <div id='explain'>영외활동 날 '.' 으로 구분</div>
+        <script>
+            let num=document.getElementById('ap_num');
+            for (var i = 0; i < num.value; i++) { //격대 인원 총원 전역변수 이용
+                document.write("<span class='ap_list'>" + (
+                    i + 1
+                ) + "번 </span>");
+                document.write("<input type='text' class='out_info'> </br>");
+            }
+        </script>
+
+        <!-- 해당월 말일 입력 , 의경없는날 -->
+        <span>몇일까지?</span>
+        <input type='text' id='last_day'>
+        </br>
+        <span>no AP</span>
+        <input type='text' id='noAP'>
+        <input type="button" onclick="submitData()" value="제출">
+        
+    </body>
+</html>
