@@ -11,6 +11,7 @@ let no_ap;
 let lastDay;
 let work_stack;
 // 값입력
+ap_num = prompt("총원 입력하시오");
 let temp_arr;
 for(let i=0;i<ap_num;i++)
 {
