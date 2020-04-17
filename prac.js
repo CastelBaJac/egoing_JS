@@ -1,20 +1,8 @@
-let ap_num;
+let ar=[1,2,3,4];
 
-function submitNum(){
-    ap_num=document.getElementById('ap_num');
-    console.log("ap_num : " + ap_num.value);
-}
+let copyarr;
+copyarr=ar.slice();
+copyarr[0]=0;
 
-function submitData(){
-    let out_arr;
-    out_arr=document.getElementsByClassName('out_info');
-    
-    console.log(typeof(out_arr));
-    for(var i=10;i>=0;i--){
-        if(out_arr[i].value===""){
-            
-        }
-    }
-
-    
-}
+alert(copyarr);
+alert(ar);
