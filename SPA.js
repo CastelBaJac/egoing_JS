@@ -11,7 +11,7 @@ let no_ap;
 let maxDay;
 let work_stack = [];
 // 값입력
-ap_num = 3;
+ap_num = 11;
 // prompt("총원 입력하시오");
 let temp_arr;
 for (let i = 0; i < ap_num; i++) { //class 배열 만들기
@@ -23,13 +23,22 @@ for (let i = 0; i < ap_num; i++) { //class 배열 만들기
 }
 // for (let i = 0; i < ap_num; i++) {     temp_arr = prompt((i + 1) + "번의 영외활동을
 // 입력하시오");     ap_ar[i].out_info = temp_arr.split('.'); }
-ap_ar[0].out_info = [4, 10, 16, 27];
-ap_ar[1].out_info = [1, 9, 21, 29];
-ap_ar[2].out_info = [3, 6, 11,30];
+ap_ar[0].out_info = [3,4,5,12,20,26];
+ap_ar[1].out_info = [2,11,18,24,25,26,27,28,29,30];
+ap_ar[2].out_info = [5,13,18,19,25];
+ap_ar[3].out_info = [6,7,8,9,17,25,30];
+ap_ar[4].out_info = [4,12,19,26];
+ap_ar[5].out_info = [3,6,13,18,19,20,21,22,23];
+ap_ar[6].out_info = [8,9,10,16,23,28];
+ap_ar[7].out_info = [1,8,9,10,11,20,27];
+ap_ar[8].out_info = [7,14,17,27,28,29,30];
+ap_ar[9].out_info = [1,2,3,7,16,23];
+ap_ar[10].out_info = [2,10,11,12,13,21,29];
 
-maxDay = 30;
+
+maxDay =30;
 //  prompt("월의 마지막 날을 입력하시오");
-no_ap = 3;
+no_ap = 22;
 // prompt("의경없는 날 입력하시오");
 // ///////////////////////////////////////////////////////////////////
 function wstest(list, char) { //work_stack에 이미 해당 번호가 존재하는지 boolean
@@ -81,7 +90,7 @@ let last_work = [];
 let work_list = [];
 for (let day = 1; day <= maxDay; day++) {
     if (day == 1) { //매월 1일
-        temp_arr = '1.2.3.1.2.3.1.2.3.1.2.3.1.2.3.1.2';
+        temp_arr = '9.2.3.8.5.10.11.4.6.7.1.9.2.3.8.5.10';
         // prompt("전날 근무일지를 입력하시오");
         temp_arr = temp_arr.split('.');
         
@@ -135,11 +144,21 @@ for (let day = 1; day <= maxDay; day++) {
                     work_list[wl_cnt] = temp;
                 }
             } else { // 나머지 새벽 근무 ~06시
+                while (ap_ar[temp - 1].noReturn === true) { // 당일 외출자 근무열외
+                    temp = temp_stack.pop();
+                    if (temp === undefined) {
+                        temp_stack = pushStack(work_list, work_list.length);
+                        temp = temp_stack.pop();
+                    }
+                }
                 for (let ap_cnt = 0; ap_cnt < ap_num; ap_cnt++) { //복귀자
                     if (ap_ar[ap_cnt].return == true) {
                         work_list[wl_cnt] = ap_cnt + 1;
                         wl_cnt++;
                         ap_ar[ap_cnt].return = false;
+                        // let idx = temp_stack.indexOf(ap_cnt+1);
+                        // alert(idx);
+                        // if (idx > -1) temp_stack.splice(idx, 1);
                     }
                 }
                 work_list[wl_cnt] = temp;
@@ -176,11 +195,21 @@ for (let day = 1; day <= maxDay; day++) {
                     work_list[wl_cnt] = temp;
                 }
             } else { // 나머지 새벽 근무 ~06시
+                while (ap_ar[temp - 1].noReturn === true) { // 당일 외출자 근무열외
+                    temp = temp_stack.pop();
+                    if (temp === undefined) {
+                        temp_stack = pushStack(work_list, work_list.length);
+                        temp = temp_stack.pop();
+                    }
+                }
                 for (let ap_cnt = 0; ap_cnt < ap_num; ap_cnt++) { //복귀자
                     if (ap_ar[ap_cnt].return == true) {
                         work_list[wl_cnt] = ap_cnt + 1;
                         wl_cnt++;
                         ap_ar[ap_cnt].return = false;
+                        let idx = temp_stack.indexOf(String(ap_cnt+1));
+                        
+                        if (idx > -1) temp_stack.splice(idx, 1);
                     }
                 }
                 work_list[wl_cnt] = temp;
