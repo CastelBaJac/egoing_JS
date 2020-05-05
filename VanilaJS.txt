@@ -1,0 +1,23 @@
+var : 동일변수를 재선언 해서 값 변경 가능
+let :  동일변수 재선언 불가
+const : 상수, 변수의 값 수정 불가
+
+
+data Type -> Float : 소수 
+
+
+정렬 하는 모든 데이터 사이에는  " , " 꼭 사용!!
+data 정렬 - Array(List , 순서가 있는 정렬, 변수도 저장)  const datArray = []; 
+		
+data 정렬 : Object( 순서가 없는 정렬,여러 데이터를 집단으로 묶어서 정렬) 
+	클래스와 같이 사용할수 있다.
+	각 value 에 값을 줄수 있다! 
+	const manInfo = {name : "" ,
+		age : 22};
+	manInfo.name  으로 특정  데이터에만 접근 가능
+	->Array와 Object 를 섞어서 사용 가능!! 
+	-> Object 안에 Array / Array 안에 Object 가능 !! 
+	=> 상황에 맞는 데이터형식/정렬을 찾아서 사용
+
+	//Object -> Class 생성자 함수로 만들어 낸것과 같음  //
+변수명은 Camel Case  ex) dayOfWeek

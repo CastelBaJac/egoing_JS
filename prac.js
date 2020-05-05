@@ -1,8 +1,23 @@
-let ar=[1,2,3,4];
+const manInfo = {
+    name: "김형찬",
+    age: 23,
+    genderMan: true,
+    city: "Seoul" ,
+    favMovie : ["a","b","c","d"] ,
+    favFood : [{name: "a" , fatty : false} , {name : "b" , fatty : false}]
 
-let copyarr;
-copyarr=ar.slice();
-copyarr[0]=0;
+}
+let humInfo = function(name,age){
+    this.name = name;
+    this.age= age;
+    this.method = function(){
+        console.log(this.name + this.age);
+    }
+}
+let man1 = new humInfo("rla",11);
 
-alert(copyarr);
-alert(ar);
+man1.method();
+
+console.log(man1);
+
+// 클래스에 함수 넣기 !!
