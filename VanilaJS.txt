@@ -21,3 +21,11 @@ data 정렬 : Object( 순서가 없는 정렬,여러 데이터를 집단으로 묶어서 정렬)
 
 	//Object -> Class 생성자 함수로 만들어 낸것과 같음  //
 변수명은 Camel Case  ex) dayOfWeek
+
+
+
+String 에 변수 추가해서 사용
+	1. '+'기호로 연결
+	2. ','기호로 연결
+	3. ``기호로 묶고 중간 마다 &{변수명} 사용
+	ex) `hello &{name}`
