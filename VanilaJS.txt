@@ -60,4 +60,14 @@ JS에 CSS 정보를 수정하려고 할때 태그에 클래스네임을 지정하여 간접적으로 수정하자
 
 html의 클래스 선택자 지정 ->리스트로 여러개 중복하여 한 태그에 여러 클래스 적용 가능
 
-toggle(x); x가 존재하면 remove하고 x가 없으면 add 함 -> if()add else remove 두개 합친거처럼
+Object.classList.toggle(x); x가 존재하면 remove하고 x가 없으면 add 함 
+-> if()add else remove 두개 합친거처럼
+
+setInterval( 함수 , 반복간격)  -> 해당 함수를 반복간격마다 자동으로 실행함 ->반복간격은 1000=1초 
+
+
+dom.qureySelector -> 해당 선택자에 맞는 걸 찾고 찾은 첫번째 객체만 반환
+dom.qureySelectorAll ->해당 선택자에 맞는 걸 찾고 모든 객체만 반환 => array type data
+
+
+Local Storage : JS의 데이터를 사용자의 브라우저를 통해 저장하는것  /// 브라우저가 꺼질 때 까지 저장
