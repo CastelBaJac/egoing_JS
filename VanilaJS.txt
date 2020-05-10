@@ -70,4 +70,9 @@ dom.qureySelector -> 해당 선택자에 맞는 걸 찾고 찾은 첫번째 객체만 반환
 dom.qureySelectorAll ->해당 선택자에 맞는 걸 찾고 모든 객체만 반환 => array type data
 
 
-Local Storage : JS의 데이터를 사용자의 브라우저를 통해 저장하는것  /// 브라우저가 꺼질 때 까지 저장
+Local Storage : JS의 데이터를 사용자의 브라우저를 통해 저장하는것  
+/// 브라우저가 꺼질 때 까지 저장
+
+Form 태그에 입력을 하면 페이지가 새로고침 된다. 
+event.preventDefault(); -> event에 지정된 디폴트 이벤트 처리기를 없앰 
+태그.appendChild(추가할 태그) -> 해당 태그에 추가할 태그를 자식으로 추가함 
