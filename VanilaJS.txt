@@ -76,3 +76,12 @@ Local Storage : JS의 데이터를 사용자의 브라우저를 통해 저장하는것
 Form 태그에 입력을 하면 페이지가 새로고침 된다. 
 event.preventDefault(); -> event에 지정된 디폴트 이벤트 처리기를 없앰 
 태그.appendChild(추가할 태그) -> 해당 태그에 추가할 태그를 자식으로 추가함 
+
+
+localStorage 에는 String 형식의 데이터만 저장된다. => Object형태의 데이터를 저장하려면?
+--> JSON.stringify(Object) 활용 
+
+JSON -> JS의 데이터를 변환 하는데 유용/
+-->데이터를 전달할때 , 자바스크립트가 그걸 다룰 수 있도록 object로 바꿔주는 기능
+JSON.parse(string) : Object로 변환
+Object.forEach(함수) -> 오브젝트 배열에 담겨있는 것들을 한번씩 실행
