@@ -7,6 +7,15 @@ const toDos = [];
 
 
 
+function deleteToDo(event){
+    const btn = event.target;
+    const li = btn.parentNode; // 삭제 해야할 li 
+
+    toDoList.removeChild(li); //toDoList(ul)의 자식 노드인 li를 삭제 
+    //삭제해야하는 li를 지정 
+    
+}
+
 function saveToDos(){
     localStorage.setItem(TODOS_LS,JSON.stringify(toDos));
 }
@@ -17,6 +26,7 @@ function paintToDo(text) { // 화면에 추가(그리기)
     const span = document.createElement("span");
     const newId = toDos.length + 1;
     delBtn.innerText = "delete";
+    delBtn.addEventListener("click",deleteToDo);
     span.innerText = text;
     // empty li에 생성한 span 과 delBtn 추가
     li.appendChild(delBtn);
